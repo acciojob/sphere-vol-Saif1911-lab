@@ -3,9 +3,11 @@ function volume_sphere(e) {
 
     const radius = Number(e.target.radius.value);
     const volumeEle = e.target.volume;
-	if(isNaN(radius) || radius<=0){
-		volumeEle.value = 'NaN'
-	}
+
+    if (isNaN(radius) || radius <= 0) {
+        volumeEle.value = 'NaN';
+        return; // stop execution
+    }
 
     const result = (4 / 3) * Math.PI * Math.pow(radius, 3);
 
